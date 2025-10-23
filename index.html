@@ -122,6 +122,8 @@
                     <a href="#" data-section="categories" class="nav-link text-gray-600 hover:text-pink-600 transition duration-150" onclick="showSection('categories', this)">Categories</a>
                     <a href="#" data-section="accessories" class="nav-link text-gray-600 hover:text-pink-600 transition duration-150" onclick="showSection('accessories', this)">Accessories</a>
                     <a href="#" data-section="beauty" class="nav-link text-gray-600 hover:text-pink-600 transition duration-150" onclick="showSection('beauty', this)">Beauty</a>
+                    <!-- AFRICAN WEAR LINK -->
+                    <a href="#" data-section="african-wear" class="nav-link text-gray-600 hover:text-pink-600 transition duration-150" onclick="showSection('african-wear', this)">African Wear</a>
                     <a href="#" data-section="about-us" class="nav-link text-gray-600 hover:text-pink-600 transition duration-150" onclick="showSection('about-us', this)">About Us</a>
                     <a href="#" data-section="contact" class="nav-link text-gray-600 hover:text-pink-600 transition duration-150" onclick="showSection('contact', this)">Contact</a>
                     
@@ -157,6 +159,8 @@
             <a href="#" data-section="categories" class="block py-2 text-gray-700 hover:text-pink-600 nav-link-mobile" onclick="showSection('categories', this); mobileMenu.classList.add('hidden');">Categories</a>
             <a href="#" data-section="accessories" class="block py-2 text-gray-700 hover:text-pink-600 nav-link-mobile" onclick="showSection('accessories', this); mobileMenu.classList.add('hidden');">Accessories</a>
             <a href="#" data-section="beauty" class="block py-2 text-gray-700 hover:text-pink-600 nav-link-mobile" onclick="showSection('beauty', this); mobileMenu.classList.add('hidden');">Beauty</a>
+            <!-- AFRICAN WEAR LINK -->
+            <a href="#" data-section="african-wear" class="block py-2 text-gray-700 hover:text-pink-600 nav-link-mobile" onclick="showSection('african-wear', this); mobileMenu.classList.add('hidden');">African Wear</a>
             <a href="#" data-section="about-us" class="block py-2 text-gray-700 hover:text-pink-600 nav-link-mobile" onclick="showSection('about-us', this); mobileMenu.classList.add('hidden');">About Us</a>
             <a href="#" data-section="contact" class="block py-2 text-gray-700 hover:text-pink-600 nav-link-mobile" onclick="showSection('contact', this); mobileMenu.classList.add('hidden');">Contact</a>
             
@@ -238,6 +242,13 @@
         </section>
 
         <!-- ============================================== -->
+        <!-- 11. PRODUCT DETAILS Section (NEW) -->
+        <!-- ============================================== -->
+        <section id="section-product-details" class="content-section hidden py-16 px-4 max-w-4xl mx-auto">
+            <!-- Content injected by showProductDetails(productName) -->
+        </section>
+        
+        <!-- ============================================== -->
         <!-- 2. CATEGORIES Section -->
         <!-- ============================================== -->
         <section id="section-categories" class="content-section hidden py-16 px-4 max-w-7xl mx-auto text-center">
@@ -285,6 +296,57 @@
                 </a>
             </div>
         </section>
+
+        <!-- ============================================== -->
+        <!-- 12. AFRICAN WEAR Section (CATEGORY SELECTOR) -->
+        <!-- ============================================== -->
+        <section id="section-african-wear" class="content-section hidden py-16 px-4 max-w-7xl mx-auto text-center">
+            <div class="bg-soft-pink p-8 md:p-16 rounded-xl shadow-xl">
+                <h3 class="text-4xl font-['Playfair_Display'] font-extrabold text-pink-700 mb-4">
+                    The Heritage Collection: African Wear
+                </h3>
+                <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+                    Explore our curated collection of bespoke African Wear, blending tradition with modern elegance.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Men's Wear Option -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition duration-300 border border-gold" 
+                         onclick="showSection('african-wear-men'); renderAfricanWearMen();">
+                        <img src="https://placehold.co/400x250/B8860B/FFFFFF?text=Men's+African+Wear" alt="Men's African Wear" class="mx-auto rounded-lg shadow-md mb-4 w-full h-48 object-cover">
+                        <h4 class="text-2xl font-['Playfair_Display'] font-bold text-gray-800">Men's Collection</h4>
+                        <p class="text-sm text-pink-600 font-semibold mt-1">Dashikis, Kaftans & Shirts &rarr;</p>
+                    </div>
+                    
+                    <!-- Women's Wear Option -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition duration-300 border border-pink-300" 
+                         onclick="showSection('african-wear-women'); renderAfricanWearWomen();">
+                        <img src="https://placehold.co/400x250/DB2777/FFFFFF?text=Women's+African+Wear" alt="Women's African Wear" class="mx-auto rounded-lg shadow-md mb-4 w-full h-48 object-cover">
+                        <h4 class="text-2xl font-['Playfair_Display'] font-bold text-gray-800">Women's Collection</h4>
+                        <p class="text-sm text-gold font-semibold mt-1">Gowns, Skirts & Accessories &rarr;</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-gold px-8 py-3 text-lg font-semibold rounded-full hover:shadow-lg inline-block mt-12" onclick="showSection('new-arrivals', this)">
+                    Back to New Arrivals
+                </a>
+            </div>
+        </section>
+        
+        <!-- ============================================== -->
+        <!-- 13. AFRICAN WEAR - MEN'S Section (DYNAMICALLY RENDERED) -->
+        <!-- ============================================== -->
+        <section id="section-african-wear-men" class="content-section hidden py-16 px-4 max-w-7xl mx-auto">
+            <!-- Content will be injected by renderAfricanWearMen() -->
+        </section>
+        
+        <!-- ============================================== -->
+        <!-- 14. AFRICAN WEAR - WOMEN'S Section (DYNAMICALLY RENDERED) -->
+        <!-- ============================================== -->
+        <section id="section-african-wear-women" class="content-section hidden py-16 px-4 max-w-7xl mx-auto text-center">
+            <!-- Content will be injected by renderAfricanWearWomen() -->
+        </section>
+
         
         <!-- ============================================== -->
         <!-- 5. ABOUT US Section -->
@@ -676,6 +738,7 @@
                         }
                     } catch (error) {
                          console.error("Error during initial authentication:", error);
+                         document.getElementById('user-id-display').textContent = 'N/A';
                          document.getElementById('user-status').textContent = 'Authentication Failed';
                          window.showMessage("Authentication failed. Cart will not be saved.");
                          window.showLoading(false);
@@ -705,94 +768,116 @@
     
     <!-- JAVASCRIPT LOGIC (MUST be outside type="module" script) -->
     <script>
-        // --- Product Data (PLACE YOUR IMAGE URLs HERE) ---
-        const allProducts = [
-            { 
-                name: "Aurora Gold Necklace", 
-                category: "Accessories", 
-                price: "1,290.00", 
-                img: "gold necklace.PNG",
-                imgAlt: "Gold Charm Necklace"
-            },
-            { 
-                name: "Blush Silk Scarf", 
-                category: "Luxury Wear", 
-                price: "450.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]",
-                imgAlt: "Pink Silk Scarf"
-            },
-            { 
-                name: "Luminance Pearl Drops", 
-                category: "Jewelry", 
-                price: "750.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]",
-                imgAlt: "White Pearl Earrings"
-            },
-            { 
-                name: "Gilded Glamour Palette", 
-                category: "Beauty", 
-                price: "390.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]",
-                imgAlt: "Gold & Pink Eyeshadow"
-            },
-            { 
-                name: "Rose Gold Bangle", 
-                category: "Accessories", 
-                price: "920.00", 
-                img: "Rose Bangle.PNG",
-                imgAlt: "Rose Gold Bangle"
-            },
-            { 
-                name: "Velvet Matte Lipstick", 
-                category: "Beauty", 
-                price: "150.00", 
-                img: "velvet matte lipstick.PNG",
-                imgAlt: "Velvet Matte Lipstick"
-            },
-            { 
-                name: "Luxury Argan Hair Oil", 
-                category: "Beauty", 
-                price: "480.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]",
-                imgAlt: "Luxury Argan Hair Oil"
-            },
-            { 
-                name: "Rosemary Growth Shampoo", 
-                category: "Beauty", 
-                price: "220.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]",
-                imgAlt: "Rosemary Growth Shampoo"
-            },
-            { 
-                name: "Silk Bonnet Hair Wrap", 
-                category: "Luxury Wear", 
-                price: "180.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]",
-                imgAlt: "Silk Bonnet Hair Wrap"
-            },
-            // --- HAIR EXTENSIONS PRODUCTS ---
-            { 
-                name: "Brazilian Deep Wave Hair", 
-                category: "Hair Extensions", 
-                price: "3,500.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]", 
-                imgAlt: "Brazilian Deep Wave Hair"
-            },
-            { 
-                name: "Peruvian Straight Lace Wig", 
-                category: "Hair Extensions", 
-                price: "6,800.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]", 
-                imgAlt: "Peruvian Straight Lace Wig"
-            },
-            { 
-                name: "Kinky Curly Closure", 
-                category: "Hair Extensions", 
-                price: "950.00", 
-                img: "[INSERT YOUR IMAGE URL HERE]", 
-                imgAlt: "Kinky Curly Closure"
-            }
+        // --- PRODUCT DATA GENERATION ---
+
+        // 1. Define Base Categories (50 products each)
+        const baseCategories = [
+            { name: "Accessories", priceStart: 500, priceIncrement: 50, color: "FFD700/8B4513", desc: "A curated collection of modern bracelets, rings, and scarves for everyday elegance." },
+            { name: "Luxury Wear", priceStart: 1500, priceIncrement: 80, color: "F472B6/ffffff", desc: "Premium fabrics and tailored fits including silk robes and custom evening wear." },
+            { name: "Jewelry", priceStart: 1000, priceIncrement: 100, color: "FFFFFF/DB2777", desc: "Fine jewelry featuring genuine pearls, gold, and delicate gemstones." },
+            { name: "Beauty", priceStart: 150, priceIncrement: 20, color: "FCE7F6/B8860B", desc: "Cruelty-free makeup and nourishing skincare to enhance your natural glow." },
+            { name: "Hair Extensions", priceStart: 3000, priceIncrement: 150, color: "DB2777/FFD700", desc: "High-quality human hair wigs, weaves, and closures for versatile styling." }
         ];
+
+        // Items to use for unique Beauty placeholders
+        const beautyItems = [
+            "Rose Serum", "Hydrating Cream", "Foundation Stick", "Velvet Primer", "Matte Lipstick", "Shimmer Gloss", "Volume Mascara", "Brow Pencil", "Contour Kit", "Blush Palette",
+            "Setting Spray", "Toner Mist", "Clay Mask", "Eye Liner Gel", "Lip Scrub", "Body Lotion", "Hand Cream", "Sunscreen SPF30", "Night Repair Oil", "Vitamin C Drops",
+            "Micellar Water", "Cleansing Balm", "Exfoliating Wash", "Highlighter Dust", "Bronzer Powder", "Concealer Liquid", "Color Corrector", "Eye Shadow Quad", "Lip Stain", "Nail Polish Pink",
+            "Nail Polish Gold", "Nail Polish White", "Foot Scrub", "Hair Mask", "Scalp Oil", "Body Wash", "Aromatherapy Candle", "Travel Kit", "Refillable Brush", "Beauty Blender",
+            "Pore Minimizer", "T-Zone Oil Control", "Cheek Tint", "Lip Balm SPF", "Cuticle Oil", "Eye Cream", "Neck Cream", "Collagen Booster", "Spot Treatment", "Acne Patch"
+        ];
+        
+        // Color palette for Beauty Placeholders (BG/Text) - Added variety
+        const beautyColors = [
+            "FFF0F5/DB2777", // Soft Pink BG / Deep Pink Text
+            "FFFFFF/F472B6", // White BG / Mid Pink Text
+            "FFD700/8B4513", // Gold BG / Brown Text (for gold accents)
+            "FCE4EC/000000"  // Very Light Pink BG / Black Text
+        ];
+
+
+        let allProducts = [];
+        let beautyProducts = [];
+
+        // 2. Generate 50 products for each Base Category
+        baseCategories.forEach(cat => {
+            for (let i = 1; i <= 50; i++) {
+                const price = (cat.priceStart + i * cat.priceIncrement).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                let itemName = `${cat.name.replace(/\s/g, '')} Item ${i}`;
+                let itemImg = `https://placehold.co/400x400/${cat.color}?text=${itemName.replace(/\s/g, '+')}`;
+                let description = `${cat.desc} This model (${i}) is part of our extensive new collection. Known for its durability and supreme quality.`;
+                
+                if (cat.name === "Beauty") {
+                    // --- Custom Logic for 50 Unique Beauty Images/Names ---
+                    const uniqueItemName = beautyItems[(i - 1) % beautyItems.length] + (i > beautyItems.length ? ` (${Math.ceil(i / beautyItems.length)})` : '');
+                    itemName = `${uniqueItemName} - Model ${i}`;
+                    
+                    // Cycle through the distinct beauty color palette
+                    const colorIndex = (i - 1) % beautyColors.length;
+                    const colors = beautyColors[colorIndex];
+
+                    itemImg = `https://placehold.co/400x400/${colors}?text=${uniqueItemName.replace(/\s/g, '+')}`;
+                    description = `${cat.desc} This item, ${uniqueItemName}, is our Model ${i} in the new collection.`;
+
+                    beautyProducts.push({
+                         name: itemName,
+                         category: cat.name,
+                         price: price,
+                         img: itemImg,
+                         imgAlt: `${cat.name} product ${i}`,
+                         description: description
+                    });
+                } else {
+                    allProducts.push({
+                        name: itemName,
+                        category: cat.name,
+                        price: price,
+                        img: itemImg,
+                        imgAlt: `${cat.name} product ${i}`,
+                        description: description
+                    });
+                }
+            }
+        });
+        
+        // Add beauty products back
+        allProducts = [...allProducts, ...beautyProducts]; 
+
+        // 3. Generate 50 products for African Wear - Men
+        const menAfricanWearProducts = [];
+        for (let i = 1; i <= 50; i++) {
+            const basePrice = 2800 + i * 60;
+            const category = "African Wear - Men";
+            const name = `Men's Agbada Style ${i}`;
+            menAfricanWearProducts.push({
+                name: name,
+                category: category,
+                price: basePrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                img: `https://placehold.co/400x400/B8860B/444444?text=${name.replace(/\s/g, '+')}`,
+                imgAlt: name,
+                description: `Bespoke tailored Agbada set made from premium woven fabric. Features intricate gold embroidery detail, perfect for formal occasions and celebrations in Ghana. Available for custom order.`
+            });
+        }
+
+        // 4. Generate 50 products for African Wear - Women
+        const womenAfricanWearProducts = [];
+        for (let i = 1; i <= 50; i++) {
+            const basePrice = 2000 + i * 50;
+            const category = "African Wear - Women";
+            const name = `Women's Ankara Gown ${i}`;
+            womenAfricanWearProducts.push({
+                name: name,
+                category: category,
+                price: basePrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                img: `https://placehold.co/400x400/DB2777/FFFFFF?text=${name.replace(/\s/g, '+')}`,
+                imgAlt: name,
+                description: `Stunning floor-length Ankara print gown. Flattering silhouette with an elegant neckline, designed to turn heads at any event. Custom fitting available for a perfect fit.`
+            });
+        }
+        
+        // 5. Combine all products (350 total items)
+        allProducts = [...allProducts, ...menAfricanWearProducts, ...womenAfricanWearProducts];
 
         // Global variables for state and elements (shared with module script)
         window.cartCount = 0;
@@ -825,34 +910,45 @@
 
         // --- PRODUCT RENDERING & SEARCH ---
         
-        function renderProducts(products) {
-            if (!productListContainer || !searchFeedback) return;
+        function renderProducts(products, containerId = 'product-list') {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            // Clear the container content
+            container.innerHTML = '';
             
-            productListContainer.innerHTML = '';
-            
-            if (products.length === 0) {
-                searchFeedback.classList.remove('hidden');
-                return;
+            if (containerId === 'product-list') {
+                if (products.length === 0) {
+                    searchFeedback.classList.remove('hidden');
+                    return;
+                }
+                searchFeedback.classList.add('hidden');
             }
-            searchFeedback.classList.add('hidden');
 
             products.forEach(product => {
                 const card = document.createElement('div');
-                card.className = 'bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-pink-100';
+                card.className = 'bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-pink-100 flex flex-col justify-between';
                 
                 // Fallback image URL for onerror (simple light pink placeholder)
                 const fallbackImg = "https://placehold.co/400x400/FCE4EC/DB2777?text=Rejoice+Allure";
+                
+                // Escape single quotes for the onclick attribute
+                const escapedProductName = product.name.replace(/'/g, "\\'");
 
                 card.innerHTML = `
-                    <img src="${product.img}" alt="${product.imgAlt}" onerror="this.onerror=null;this.src='${fallbackImg}';" class="w-full h-48 object-cover object-center">
-                    <div class="p-4 md:p-6 text-center">
-                        <p class="text-sm text-gold font-semibold mb-1">${product.category}</p>
-                        <h4 class="text-lg font-['Playfair_Display'] text-gray-800 font-bold mb-2">${product.name}</h4>
-                        <p class="text-xl text-pink-600 font-extrabold mb-4">₵ ${product.price}</p>
-                        <button class="add-to-cart-btn btn-gold w-full py-2 rounded-lg text-sm font-medium" data-name="${product.name}">Add to Cart</button>
+                    <div class="cursor-pointer flex-grow" onclick="showProductDetails('${escapedProductName}')">
+                        <img src="${product.img}" alt="${product.imgAlt}" onerror="this.onerror=null;this.src='${fallbackImg}';" class="w-full h-48 object-cover object-center">
+                        <div class="p-4 md:p-6 text-center">
+                            <p class="text-sm text-gold font-semibold mb-1">${product.category.replace('African Wear - ', '')}</p>
+                            <h4 class="text-lg font-['Playfair_Display'] text-gray-800 font-bold mb-2">${product.name}</h4>
+                            <p class="text-xl text-pink-600 font-extrabold mb-4">₵ ${product.price}</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 md:p-6 md:pt-0">
+                        <button class="add-to-cart-btn btn-gold w-full py-2 rounded-lg text-sm font-medium" data-name="${escapedProductName}">Add to Cart</button>
                     </div>
                 `;
-                productListContainer.appendChild(card);
+                container.appendChild(card);
             });
             
             attachAddToCartListeners();
@@ -874,11 +970,17 @@
             let filteredProducts;
 
             if (lowerQuery === "") {
-                filteredProducts = allProducts;
+                // Show only the first 12 products as featured items for the default view
+                filteredProducts = allProducts.slice(0, 12); 
+                searchFeedback.querySelector('p').innerHTML = `No results found for your search query. Try another term!`;
+
             } else {
+                // Search across ALL 350 products
                 filteredProducts = allProducts.filter(product => 
-                    product.name.toLowerCase().includes(lowerQuery)
+                    product.name.toLowerCase().includes(lowerQuery) ||
+                    product.category.toLowerCase().includes(lowerQuery)
                 );
+                searchFeedback.querySelector('p').innerHTML = `No results found for your search query. Try another term!`;
             }
 
             renderProducts(filteredProducts);
@@ -889,7 +991,9 @@
             const categoriesSection = document.getElementById('section-categories');
             if (!categoriesSection) return;
 
-            const uniqueCategories = [...new Set(allProducts.map(p => p.category))];
+            // Generate unique categories from the first 250 base products
+            const uniqueCategories = [...new Set(allProducts.slice(0, 250).map(p => p.category))];
+            uniqueCategories.push('African Wear');
 
             let contentHTML = `
                 <div class="py-16 px-4 max-w-7xl mx-auto text-center">
@@ -900,22 +1004,26 @@
             `;
             
             uniqueCategories.forEach(category => {
+                const isAfricanWear = category === 'African Wear';
+                const clickAction = isAfricanWear ? "showSection('african-wear')" : `filterByCategory('${category}')`;
+                
                 const placeholderColors = {
                     "Accessories": "FFD700/8B4513",
                     "Luxury Wear": "F472B6/ffffff",
                     "Jewelry": "FFFFFF/DB2777",
                     "Beauty": "FCE7F6/B8860B",
-                    "Hair Extensions": "DB2777/FFD700" 
+                    "Hair Extensions": "DB2777/FFD700",
+                    "African Wear": "8B4513/FFD700"
                 };
                 const colors = placeholderColors[category] || "fce4ec/DB2777";
                 let imgUrl = `https://placehold.co/400x250/${colors}?text=${category.replace(/\s/g, '+')}`;
 
                 contentHTML += `
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden cursor-pointer border border-pink-100" onclick="filterByCategory('${category}')">
-                        <img src="${imgUrl}" alt="${category} products" class="w-full h-48 object-cover object-center">
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden cursor-pointer border border-pink-100" onclick="${clickAction}">
+                        <img src="${imgUrl}" alt="${category} products" onerror="this.onerror=null;this.src='${imgUrl}';" class="w-full h-48 object-cover object-center">
                         <div class="p-6">
                             <h4 class="text-2xl font-['Playfair_Display'] text-gray-800 font-bold mb-1">${category}</h4>
-                            <p class="text-sm text-gold font-semibold">View All Items &rarr;</p>
+                            <p class="text-sm text-gold font-semibold">${isAfricanWear ? 'Choose Collection' : 'View All Items'} &rarr;</p>
                         </div>
                     </div>
                 `;
@@ -937,6 +1045,138 @@
             handleSearch(categoryName);
             showMessage(`Displaying results for category: ${categoryName}`);
         }
+        
+        // --- AFRICAN WEAR RENDERING FUNCTIONS (NOW DYNAMIC) ---
+        function renderAfricanWear(category, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const products = allProducts.filter(p => p.category === category);
+            const isMen = category.includes('Men');
+            const collectionName = isMen ? "Men's" : "Women's";
+            const colorClass = isMen ? 'text-gold' : 'text-pink-700';
+            const accentClass = isMen ? 'text-pink-600' : 'text-gold';
+
+            let contentHTML = `
+                <div class="bg-${isMen ? 'white' : 'soft-pink'} p-8 md:p-16 rounded-xl shadow-xl border border-${isMen ? 'gold' : 'pink-300'}">
+                    <h3 class="text-4xl font-['Playfair_Display'] font-extrabold ${colorClass} mb-4 text-center">
+                        ${collectionName} African Wear Collection (<span class="${accentClass}">${products.length} Styles</span>)
+                    </h3>
+                    <p class="text-lg text-gray-700 mb-10 max-w-3xl mx-auto text-center">
+                        ${isMen ? 'A refined selection of contemporary and traditional wear, tailored for the modern Ghanaian gentleman.' : 'Elegant gowns, modern two-piece sets, and stylish accessories in vibrant print designs, perfect for any occasion.'}
+                    </p>
+
+                    <div id="african-wear-grid-${isMen ? 'men' : 'women'}" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+            `;
+            container.innerHTML = contentHTML; // Render shell first
+
+            renderProducts(products, `african-wear-grid-${isMen ? 'men' : 'women'}`); // Render products into the new grid
+
+            // Add back button outside the grid
+            container.innerHTML += `
+                <div class="text-center mt-8">
+                    <a href="#" class="btn-gold px-8 py-3 text-lg font-semibold rounded-full hover:shadow-lg inline-block" onclick="showSection('african-wear', this)">
+                        &larr; Back to African Wear Categories
+                    </a>
+                </div>
+                </div>
+            `;
+        }
+
+        // Helper functions exposed globally for click events:
+        window.renderAfricanWearMen = function() {
+            renderAfricanWear("African Wear - Men", 'section-african-wear-men');
+        }
+        window.renderAfricanWearWomen = function() {
+            renderAfricanWear("African Wear - Women", 'section-african-wear-women');
+        }
+
+        // --- NEW: PRODUCT DETAILS FUNCTION ---
+        window.showProductDetails = function(productName) {
+            const product = allProducts.find(p => p.name === productName);
+            const detailsSection = document.getElementById('section-product-details');
+
+            if (!product || !detailsSection) {
+                showMessage("Product details not found.");
+                return;
+            }
+
+            const fallbackImg = "https://placehold.co/600x600/FCE4EC/DB2777?text=Product+Image+Unavailable";
+            const escapedProductName = productName.replace(/'/g, "\\'"); // Escape for event listeners
+
+            detailsSection.innerHTML = `
+                <div class="bg-white p-6 md:p-12 rounded-xl shadow-2xl border border-pink-200">
+                    <button class="text-pink-600 hover:text-gold mb-6 flex items-center text-sm font-semibold" onclick="showSection('new-arrivals')">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Back to Shop
+                    </button>
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                        <!-- Image -->
+                        <div class="flex items-center justify-center">
+                            <img src="${product.img}" alt="${product.imgAlt}" onerror="this.onerror=null;this.src='${fallbackImg}';" class="w-full max-w-sm rounded-xl shadow-lg border border-pink-100 object-cover aspect-square">
+                        </div>
+
+                        <!-- Details -->
+                        <div class="space-y-6">
+                            <p class="text-sm text-gold font-semibold uppercase">${product.category.replace('African Wear - ', '')}</p>
+                            <h1 class="text-4xl font-['Playfair_Display'] font-extrabold text-pink-700">${product.name}</h1>
+                            <p class="text-3xl text-gray-800 font-extrabold">₵ ${product.price}</p>
+
+                            <h3 class="text-lg font-bold text-gray-700 mt-4">Product Description</h3>
+                            <p class="text-gray-600">${product.description}</p>
+                            
+                            <!-- NEW QUANTITY SELECTOR -->
+                            <div class="flex items-center space-x-4 mt-6">
+                                <label for="product-qty" class="font-bold text-gray-700">Quantity:</label>
+                                <input type="number" id="product-qty" value="1" min="1" class="w-20 p-2 border border-pink-300 rounded-lg text-center focus:ring-gold focus:border-gold">
+                            </div>
+
+                            <button id="add-to-cart-details-btn" class="btn-gold w-full py-3 rounded-lg text-lg font-semibold mt-4" data-name="${escapedProductName}">Add to Cart</button>
+                            <p class="text-xs text-gray-500 pt-2">Currently available in stock. Order now for fast delivery across Ghana.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Attach listener for the specific quantity button
+            const detailsButton = detailsSection.querySelector('#add-to-cart-details-btn');
+            if (detailsButton) {
+                detailsButton.addEventListener('click', (event) => {
+                    if (!window.isAuthReady()) {
+                        showMessage("Connecting to backend. Please wait a moment.");
+                        return;
+                    }
+
+                    const productName = event.target.getAttribute('data-name');
+                    const quantityInput = document.getElementById('product-qty');
+                    const quantityToAdd = parseInt(quantityInput.value);
+
+                    if (isNaN(quantityToAdd) || quantityToAdd < 1) {
+                        showMessage("Please select a valid quantity (1 or more).");
+                        return;
+                    }
+                    
+                    const currentCartQty = window.cartItems[productName] || 0;
+                    const newTotalQty = currentCartQty + quantityToAdd;
+                    
+                    window.showLoading(true, `Adding ${quantityToAdd} item(s)...`);
+                    
+                    const newCartState = {...window.cartItems, [productName]: newTotalQty};
+
+                    window.updateFirestoreCart(newCartState)
+                        .then(() => {
+                            // The Firestore listener handles the final message and loading off.
+                            // However, we can add a specific message here for immediate feedback:
+                            showMessage(`Added ${quantityToAdd} x ${productName} to cart.`);
+                            window.showLoading(false);
+                        })
+                        .catch(() => window.showLoading(false));
+                });
+            }
+
+            // Switch to the new section
+            window.showSection('product-details');
+        };
         
         // --- NAVIGATION LOGIC ---
         window.showSection = function(sectionId, element, clearSearch = false) {
@@ -1018,7 +1258,7 @@
                 updateData[productName] = newQuantity;
                 
                 // 2. Update Firestore with new quantity (merging)
-                window.updateFirestoreCart({...window.cartItems, ...updateData})
+                window.updateFirestoreCart({...window.cartItems, [productName]: newQuantity})
                     .then(() => window.showLoading(false))
                     .catch(() => window.showLoading(false));
             }
@@ -1151,7 +1391,6 @@
                     // Create an object containing the full intended cart state
                     const newCartState = {...window.cartItems, [productName]: currentQty};
 
-                    // Send the full new state to Firestore
                     window.updateFirestoreCart(newCartState)
                         .then(() => {
                             // Firestore listener handles showMessage and showLoading(false)
@@ -1297,8 +1536,8 @@
                 window.showMessage("Firebase module failed to load. Running in simulation mode.");
             }
 
-            // 2. Initial render (will be overwritten by Firestore onSnapshot soon after)
-            renderProducts(allProducts);
+            // 2. Initial render (show only the first 12 featured products)
+            renderProducts(allProducts.slice(0, 12)); 
 
             // 3. Render categories list
             renderCategories();
