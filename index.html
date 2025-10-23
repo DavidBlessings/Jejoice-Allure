@@ -68,13 +68,17 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* --- NEW HERO BACKGROUND STYLES using inline SVG --- */
+        /* --- HERO BACKGROUND STYLES (UPDATED) --- */
         .hero-background {
-            /* Replaced with inline SVG for elegant pattern using pink/gold colors */
+            /* === USER ACTION REQUIRED: REPLACE THIS URL WITH YOUR OWN IMAGE LINK === */
             background-image: url(background.PNG);
-            background-size: 80px 80px; /* Scale the pattern */
+            
+            background-size: cover;
             background-position: center;
-            background-repeat: repeat;
+            background-repeat: no-repeat;
+            /* Creates the auto-scrollable (parallax) effect */
+            background-attachment: fixed; 
+            
             position: relative;
         }
 
@@ -191,7 +195,7 @@
         <!-- 1. NEW ARRIVALS Section (Default View) -->
         <!-- ============================================== -->
         <section id="section-new-arrivals" class="content-section">
-            <!-- Hero Section (UPDATED to use background image class with inline SVG) -->
+            <!-- Hero Section (UPDATED to use parallax background image) -->
             <div class="hero-background py-16 md:py-24 text-center">
                 <div class="hero-content max-w-4xl mx-auto px-4">
                     <h2 class="text-4xl md:text-6xl font-['Playfair_Display'] font-extrabold text-pink-700 leading-tight mb-4">
@@ -805,8 +809,8 @@
             for (let i = 1; i <= 50; i++) {
                 const price = (cat.priceStart + i * cat.priceIncrement).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 let itemName = `${cat.name.replace(/\s/g, '')} Item ${i}`;
-                let itemImg = `https://placehold.co/400x400/${cat.color}?text=${itemName.replace(/\s/g, '+')}`;
                 let description = `${cat.desc} This model (${i}) is part of our extensive new collection. Known for its durability and supreme quality.`;
+                let itemImg;
                 
                 if (cat.name === "Beauty") {
                     // --- Custom Logic for 50 Unique Beauty Images/Names ---
@@ -816,8 +820,11 @@
                     // Cycle through the distinct beauty color palette
                     const colorIndex = (i - 1) % beautyColors.length;
                     const colors = beautyColors[colorIndex];
+                    const encodedName = itemName.replace(/\s/g, '+');
 
-                    itemImg = `https://placehold.co/400x400/${colors}?text=${uniqueItemName.replace(/\s/g, '+')}`;
+                    // NEW: Use descriptive placeholder image URL
+                    itemImg = `https://placehold.co/400x400/${colors}?text=BEAUTY%0A${encodedName}`;
+
                     description = `${cat.desc} This item, ${uniqueItemName}, is our Model ${i} in the new collection.`;
 
                     beautyProducts.push({
@@ -829,6 +836,10 @@
                          description: description
                     });
                 } else {
+                    const encodedName = itemName.replace(/\s/g, '+');
+                    // NEW: Use descriptive placeholder image URL for other categories
+                    itemImg = `https://placehold.co/400x400/${cat.color}?text=${cat.name.toUpperCase()}%0A${encodedName}`;
+
                     allProducts.push({
                         name: itemName,
                         category: cat.name,
@@ -850,11 +861,13 @@
             const basePrice = 2800 + i * 60;
             const category = "African Wear - Men";
             const name = `Men's Agbada Style ${i}`;
+            const encodedName = name.replace(/\s/g, '+');
             menAfricanWearProducts.push({
                 name: name,
                 category: category,
                 price: basePrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                img: `https://placehold.co/400x400/B8860B/444444?text=${name.replace(/\s/g, '+')}`,
+                // NEW: Descriptive placeholder
+                img: `https://placehold.co/400x400/B8860B/444444?text=MEN%0A${encodedName}`,
                 imgAlt: name,
                 description: `Bespoke tailored Agbada set made from premium woven fabric. Features intricate gold embroidery detail, perfect for formal occasions and celebrations in Ghana. Available for custom order.`
             });
@@ -866,11 +879,13 @@
             const basePrice = 2000 + i * 50;
             const category = "African Wear - Women";
             const name = `Women's Ankara Gown ${i}`;
+            const encodedName = name.replace(/\s/g, '+');
             womenAfricanWearProducts.push({
                 name: name,
                 category: category,
                 price: basePrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                img: `https://placehold.co/400x400/DB2777/FFFFFF?text=${name.replace(/\s/g, '+')}`,
+                // NEW: Descriptive placeholder
+                img: `https://placehold.co/400x400/DB2777/FFFFFF?text=WOMEN%0A${encodedName}`,
                 imgAlt: name,
                 description: `Stunning floor-length Ankara print gown. Flattering silhouette with an elegant neckline, designed to turn heads at any event. Custom fitting available for a perfect fit.`
             });
@@ -1575,4 +1590,3 @@
     </script>
 </body>
 </html>
-
