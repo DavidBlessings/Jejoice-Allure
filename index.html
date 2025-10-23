@@ -68,13 +68,13 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* --- NEW HERO BACKGROUND STYLES --- */
+        /* --- NEW HERO BACKGROUND STYLES using inline SVG --- */
         .hero-background {
-            /* Placeholder image for elegant pink/gold/white theme */
-            background-image: url('https://placehold.co/1920x800/fce4ec/DB2777?text=Luxury+Accra+Beauty+Flatlay');
-            background-size: cover;
+            /* Replaced with inline SVG for elegant pattern using pink/gold colors */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23fce4ec'/%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z' fill='%23FFD700' opacity='.15'/%3E%3Cpath d='M10 0h60v10H10zm0 70h60v10H10zm0-30h60v10H10z' fill='%23DB2777' opacity='.1'/%3E%3C/svg%3E");
+            background-size: 80px 80px; /* Scale the pattern */
             background-position: center;
-            background-repeat: no-repeat;
+            background-repeat: repeat;
             position: relative;
         }
 
@@ -187,7 +187,7 @@
         <!-- 1. NEW ARRIVALS Section (Default View) -->
         <!-- ============================================== -->
         <section id="section-new-arrivals" class="content-section">
-            <!-- Hero Section (UPDATED to use background image class) -->
+            <!-- Hero Section (UPDATED to use background image class with inline SVG) -->
             <div class="hero-background py-16 md:py-24 text-center">
                 <div class="hero-content max-w-4xl mx-auto px-4">
                     <h2 class="text-4xl md:text-6xl font-['Playfair_Display'] font-extrabold text-pink-700 leading-tight mb-4">
@@ -261,7 +261,7 @@
                 </p>
                 <a href="#" class="btn-gold px-8 py-3 text-lg font-semibold rounded-full hover:shadow-lg inline-block" onclick="showSection('new-arrivals', this)">
                     Back to New Arrivals
-                </a>
+                </button>
             </div>
         </section>
 
@@ -705,69 +705,69 @@
     
     <!-- JAVASCRIPT LOGIC (MUST be outside type="module" script) -->
     <script>
-        // --- Product Data ---
+        // --- Product Data (PLACE YOUR IMAGE URLs HERE) ---
         const allProducts = [
             { 
                 name: "Aurora Gold Necklace", 
                 category: "Accessories", 
                 price: "1,290.00", 
-                img: "https://placehold.co/400x400/FFD700/8B4513?text=Gold+Necklace",
+                img: "gold necklace.PNG",
                 imgAlt: "Gold Charm Necklace"
             },
             { 
                 name: "Blush Silk Scarf", 
                 category: "Luxury Wear", 
                 price: "450.00", 
-                img: "https://placehold.co/400x400/F472B6/ffffff?text=Silk+Scarf",
+                img: "[INSERT YOUR IMAGE URL HERE]",
                 imgAlt: "Pink Silk Scarf"
             },
             { 
                 name: "Luminance Pearl Drops", 
                 category: "Jewelry", 
                 price: "750.00", 
-                img: "https://placehold.co/400x400/FFFFFF/DB2777?text=Pearl+Earrings",
+                img: "[INSERT YOUR IMAGE URL HERE]",
                 imgAlt: "White Pearl Earrings"
             },
             { 
                 name: "Gilded Glamour Palette", 
                 category: "Beauty", 
                 price: "390.00", 
-                img: "https://placehold.co/400x400/FCE7F6/B8860B?text=Eyeshadow+Palette",
+                img: "[INSERT YOUR IMAGE URL HERE]",
                 imgAlt: "Gold & Pink Eyeshadow"
             },
             { 
                 name: "Rose Gold Bangle", 
                 category: "Accessories", 
                 price: "920.00", 
-                img: "https://placehold.co/400x400/FECACA/A855F7?text=Rose+Bangle",
+                img: "Rose Bangle.PNG",
                 imgAlt: "Rose Gold Bangle"
             },
             { 
                 name: "Velvet Matte Lipstick", 
                 category: "Beauty", 
                 price: "150.00", 
-                img: "https://placehold.co/400x400/9D174D/FCE7F6?text=Lipstick",
+                img: "velvet matte lipstick.PNG",
                 imgAlt: "Velvet Matte Lipstick"
             },
             { 
                 name: "Luxury Argan Hair Oil", 
                 category: "Beauty", 
                 price: "480.00", 
-                img: "https://placehold.co/400x400/FFC72C/4C051E?text=Hair+Oil+Argan",
+                img: "[INSERT YOUR IMAGE URL HERE]",
                 imgAlt: "Luxury Argan Hair Oil"
             },
             { 
                 name: "Rosemary Growth Shampoo", 
                 category: "Beauty", 
                 price: "220.00", 
-                img: "https://placehold.co/400x400/A7F3D0/10B981?text=Shampoo+Rosemary",
+                img: "[INSERT YOUR IMAGE URL HERE]",
                 imgAlt: "Rosemary Growth Shampoo"
             },
             { 
                 name: "Silk Bonnet Hair Wrap", 
                 category: "Luxury Wear", 
                 price: "180.00", 
-                img: "https://placehold.co/400x400/DB2777/FFFFFF?text=Silk+Bonnet",
+                img: "[INSERT YOUR IMAGE URL HERE]",
                 imgAlt: "Silk Bonnet Hair Wrap"
             },
             // --- HAIR EXTENSIONS PRODUCTS ---
@@ -775,21 +775,21 @@
                 name: "Brazilian Deep Wave Hair", 
                 category: "Hair Extensions", 
                 price: "3,500.00", 
-                img: "https://placehold.co/400x400/9D174D/FFD700?text=Deep+Wave", 
+                img: "[INSERT YOUR IMAGE URL HERE]", 
                 imgAlt: "Brazilian Deep Wave Hair"
             },
             { 
                 name: "Peruvian Straight Lace Wig", 
                 category: "Hair Extensions", 
                 price: "6,800.00", 
-                img: "https://placehold.co/400x400/8B4513/FFFFFF?text=Lace+Wig", 
+                img: "[INSERT YOUR IMAGE URL HERE]", 
                 imgAlt: "Peruvian Straight Lace Wig"
             },
             { 
                 name: "Kinky Curly Closure", 
                 category: "Hair Extensions", 
                 price: "950.00", 
-                img: "https://placehold.co/400x400/27272A/FFD700?text=Kinky+Closure", 
+                img: "[INSERT YOUR IMAGE URL HERE]", 
                 imgAlt: "Kinky Curly Closure"
             }
         ];
@@ -840,8 +840,11 @@
                 const card = document.createElement('div');
                 card.className = 'bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-pink-100';
                 
+                // Fallback image URL for onerror (simple light pink placeholder)
+                const fallbackImg = "https://placehold.co/400x400/FCE4EC/DB2777?text=Rejoice+Allure";
+
                 card.innerHTML = `
-                    <img src="${product.img}" alt="${product.imgAlt}" onerror="this.src='https://placehold.co/400x400/FFC0CB/555555?text=Image+Error'" class="w-full h-48 object-cover object-center">
+                    <img src="${product.img}" alt="${product.imgAlt}" onerror="this.onerror=null;this.src='${fallbackImg}';" class="w-full h-48 object-cover object-center">
                     <div class="p-4 md:p-6 text-center">
                         <p class="text-sm text-gold font-semibold mb-1">${product.category}</p>
                         <h4 class="text-lg font-['Playfair_Display'] text-gray-800 font-bold mb-2">${product.name}</h4>
@@ -1063,11 +1066,14 @@
                     const itemTotal = pricePerItem * quantity;
                     subtotal += itemTotal;
                     
+                    // Fallback image URL for onerror in cart (simple light pink placeholder)
+                    const fallbackImg = "https://placehold.co/100x100/FCE4EC/DB2777?text=RA";
+
                     cartHTML += `
                         <li class="flex flex-col sm:grid sm:grid-cols-5 items-center py-4 gap-2">
                             
                             <div class="flex items-center space-x-4 col-span-2 w-full sm:w-auto">
-                                <img src="${productDetail.img}" alt="${productDetail.imgAlt}" class="w-16 h-16 object-cover rounded-lg border border-pink-100 flex-shrink-0">
+                                <img src="${productDetail.img}" alt="${productDetail.imgAlt}" onerror="this.onerror=null;this.src='${fallbackImg}';" class="w-16 h-16 object-cover rounded-lg border border-pink-100 flex-shrink-0">
                                 <div class="text-left flex-grow">
                                     <p class="font-bold text-gray-800">${productName}</p>
                                     <p class="text-sm text-gray-500 sm:hidden">Price: ₵ ${pricePerItem.toLocaleString('en-GH', { minimumFractionDigits: 2 })}</p>
@@ -1330,4 +1336,3 @@
     </script>
 </body>
 </html>
-
